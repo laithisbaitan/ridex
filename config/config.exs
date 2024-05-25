@@ -36,7 +36,7 @@ config :esbuild,
   version: "0.17.11",
   ridex: [
     args:
-      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
+      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/* --loader:.js=jsx),
     cd: Path.expand("../assets", __DIR__),
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]
@@ -60,6 +60,10 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+config :ridex, Ridex.Guardian,
+  issuer: "ridex",
+  secret_key: "KIt0ag+FnkSxyfHFAOknoSp21z7NpeosCaeh5odXMNfCU0sNaeHbzNJLq5tqDNqC"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

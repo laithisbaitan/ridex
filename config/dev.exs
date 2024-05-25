@@ -3,7 +3,7 @@ import Config
 # Configure your database
 config :ridex, Ridex.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "v3rys3cure",
   hostname: "localhost",
   database: "ridex_dev",
   stacktrace: true,

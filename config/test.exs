@@ -7,9 +7,9 @@ import Config
 # Run `mix help test` for more information.
 config :ridex, Ridex.Repo,
   username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
+  password: "v3rys3cure",
   database: "ridex_test#{System.get_env("MIX_TEST_PARTITION")}",
+  hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: System.schedulers_online() * 2
 
