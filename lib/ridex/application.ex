@@ -12,6 +12,7 @@ defmodule Ridex.Application do
       Ridex.Repo,
       {DNSCluster, query: Application.get_env(:ridex, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Ridex.PubSub},
+      RidexWeb.Presence,
       # Start the Finch HTTP client for sending emails
       {Finch, name: Ridex.Finch},
       # Start a worker by calling: Ridex.Worker.start_link(arg)
