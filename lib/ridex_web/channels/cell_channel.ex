@@ -1,12 +1,14 @@
 defmodule RidexWeb.CellChannel do
   alias Ridex.RideRequest
   use RidexWeb, :channel
+  alias RidexWeb.Presence
 
   intercept ["ride:requested"]
 
   @impl true
-  def join("cell:" <> _geohash, _payload, socket) do
-    {:ok, %{}, socket}
+  def join("cell:" <> _geohash, position = _payload, socket) do
+    send(self(), {:after_join, position})
+    {:ok, socket}
     # if authorized?(payload) do
     #   {:ok, socket}
     # else
@@ -45,6 +47,21 @@ defmodule RidexWeb.CellChannel do
             {:reply, :error, socket}
         end
     end
+  end
+
+  @impl true
+  def handle_info({:after_join, position}, socket) do
+    user = socket.assigns[:current_user]
+
+    if user.type == "driver" do
+      Presence.track(socket, user.id, %{
+        lat: position["lat"],
+        lng: position["lng"]
+        })
+    end
+
+    push(socket, "presence_state", Presence.list(socket))
+    {:noreply, socket}
   end
 
   @impl true
