@@ -2,10 +2,17 @@ import Config
 
 # Configure your database
 config :ridex, Ridex.Repo,
-  username: "postgres",
-  password: "v3rys3cure",
-  hostname: "localhost",
-  database: "ridex_dev",
+  # username: "postgres",
+  # password: "v3rys3cure",
+  # hostname: "localhost",
+  # database: "ridex_dev",
+  # stacktrace: true,
+  # show_sensitive_data_on_connection_error: true,
+  # pool_size: 10
+  username: "8cd04f56-6751-42ae-83bd-f83529693307-user",
+  password: "pw-4ff25b92-80ab-45ff-94d3-4bec95386627",
+  hostname: "postgres-free-tier-v2020.gigalixir.com",
+  database: "8cd04f56-6751-42ae-83bd-f83529693307",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
