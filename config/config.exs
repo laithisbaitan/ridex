@@ -13,7 +13,6 @@ config :ridex,
 
 # Configures the endpoint
 config :ridex, RidexWeb.Endpoint,
-  force_ssl: [rewrite_on: [:x_forwarded_proto]],
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [

@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "deploy": "cd .. && mix assets.deploy && rm -f _build/esbuild*"
+  },
   "dependencies": {
     "@babel/preset-react": "^7.24.6",
     "latlon-geohash": "^2.0.0",
@@ -6,8 +9,5 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-leaflet": "^4.2.1"
-  },
-  "scripts": {
-    "deploy": "cd .. && mix assets.deploy && rm -f _build/esbuild*"
   }
 }
