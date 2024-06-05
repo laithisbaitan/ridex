@@ -9,6 +9,13 @@ config :ridex, Ridex.Repo,
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
+  # username: "8cd04f56-6751-42ae-83bd-f83529693307-user",
+  # password: "pw-4ff25b92-80ab-45ff-94d3-4bec95386627",
+  # hostname: "postgres-free-tier-v2020.gigalixir.com",
+  # database: "8cd04f56-6751-42ae-83bd-f83529693307",
+  # stacktrace: true,
+  # show_sensitive_data_on_connection_error: true,
+  # pool_size: 2
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
